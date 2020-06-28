@@ -1,0 +1,154 @@
+                                                            
+                                                            ANALYSIS OF TASKS(WORST CASE)
+                                                               
+       
+       =======================================================================================================================================================
+                   
+        Task-0: Printing out the information of first record of texts and last record of calls.
+        
+        -Explaination: 
+        -Statements: Statements like “print”, were only used in the program. Time complexity of statements is constant time i,e O(1)
+       
+        -Code Snippet:
+        
+        print("First record of texts, {} texts {} at time {}".format(record1[0],record1[1],record1[2]))                                #O(1)
+        print("Last record of calls, {} calls {} at time {}, lasting {} seconds".format(record2[0],record2[1],record2[2],record2[3]))  #O(1)
+        
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+        
+        =========================================================================================================================================================
+        
+        Task-1: Printing the number of distinct telephone numbers in the dataset.
+        
+        -Explaination:
+	-Statements: Statements like “print”, were used in the program. The time complexity of statements is constant time i,e O(1)
+        
+	-Code Snippet:
+        
+                        for record in records:
+                                rec_set.add(record[0])           #O(1)
+                                rec_set.add(record[1])           #O(1)
+	
+       [1]	Loops: “For loop” was used in the program. Complexity is O(n) 
+       [2]	In-built Python Function: set is used, using the “add” method. Time Complexity : O(1) 
+    
+                             i,e inside For-Loop : O(n*1)=O(n)
+                             
+                                O(1)<O(n)
+                        
+	Time Complexity: O(n)
+	Space Complexity: O(n)
+        
+        =========================================================================================================================================================
+
+        Task-2: Printing the telephone number that spent the longest time on the phone and the total time in seconds they spend on phone call.
+        
+        -Explaination:
+	-Statements: Statements like “print”, were used in the program. The time complexity of statements is constant time i,e O(1)
+        
+	-Code Snippet of For-Loop:
+        
+                        for record in calls:
+                                pn1 = record[0]
+                                pn2 = record[1]
+
+       [1]	Loops: “For loop” was used in the program. Complexity is O(n) 
+       [2]	If-Else statements inside for loop:
+       
+               a)       if pn1 in my_dict.keys():                              
+        			my_dict[pn1] += call_duration           #O(1)
+    		        else:
+        			my_dict[pn1] = call_duration            #O(1)
+
+
+
+               b)	if pn2_d >= pn1_d:
+                                if max_duration < pn2_d:
+                                        max_duration = pn2_d            #O(1)
+                                        max_d_pn = pn2                  #O(1)
+                        else:
+                                if max_duration < pn1_d:                
+                                        max_duration = pn1_d            #O(1)
+                                        max_d_pn = pn1                  #O(1)
+
+	                          a) and b) time complexity is O(1) 
+                
+                                i,e total time-complexity of For-loop is O(n*constant)=O(n)
+                
+                                 O(1)<O(n)
+                                
+	Time Complexity: O(n)
+	Space Complexity:O(n)
+        
+        ========================================================================================================================================================
+
+        Task-3: Printing the telephone codes called by fixed-line numbers in Bangalore and the percentage of calls from fixed lines in Bangalore that are to fixed lines in                   Bangalore.
+        
+        -Explaination:
+	-Statements: Statements like “print”, were used in the program. The time complexity of statements is constant time i,e O(1)
+        
+	-CodeSnippet of For loop:
+        
+                        for record in calls:
+                        a)	 if record[0][:5] == "(080)":
+ 			                total_count += 1                                                #O(1)
+      			                pn = record[1]                                                  #O(1)
+            	        b)	        if(pn[0] == "("):
+            				        if pn[:5] == "(080)":
+          			                        banglore_count += 1                             #O(1)
+    			                                area_code = pn.split(")")[0]                    #O(1)
+           			                        area_codes_list.add(area_code[1:])              #O(1)
+                        c)                      elif (pn[0] in ['7','8','9']):
+       				                         area_code = pn[:4]                             #O(1)
+                                                         area_codes_list.add(area_code)                 #O(1)
+   	                d)	    		else:
+       			                               area_codes_list.add("140")                       #O(1)
+
+          [1]	Loops: “For loop” was used in the program. Complexity is O(n) 
+          [2]	If-Else statements inside for loop: The statements a,b,c,d inside if loop take constant time I,e O(1)
+          [3]	In-built function (Split function): Time complexity: O(1)
+          [4]	In-built function (set.add): Time complexity: O(1)
+
+                                i,e total time-complexity of For-loop is O(n*constant)=O(n)
+                
+	-In-built function (sorted): Time complexity: O(nlogn)
+
+   	                                O(1)<O(n)<O(nlogn)
+        Time Complexity: O(n^logn)
+	Space Complexity:O(n)
+        
+        ============================================================================================================================================================
+
+        Task-4: Printing the list of numbers that could be telemarketers.
+        
+        -Explaination:
+	-Statements: Statements like “print”, were used in the program. The time complexity of statements is constant time i,e O(1)
+        
+	-Code Snippet:
+        
+                          for record1,record2 in zip(texts,calls):
+                                 my_set.add(record1[0])
+                                 my_set.add(record1[1])
+                                 my_set.add(record2[1])
+
+
+                         for record in calls:
+                                  pn = record[0]
+                                  if pn not in my_set:
+                                        telemarketing_list.add(pn)
+
+
+          [1]	Loops: “For loop” was used in the program. Complexity is O(n) 
+          [2]	If sentence: Time complexity: O(1)
+          [3]	In-built function(set.add): Time Complexity: O(1)
+          
+                                 i,e total time-complexity of For-loop is O(n*constant)=O(n)
+ 	
+•	-In-built function (sorted): Time complexity: O(nlogn)
+
+   	                               O(1)<O(n)<O(n^logn)
+        Time Complexity: O(n^logn)
+	Space Complexity: O(n)
+
+        ========================================================================================================================================================
