@@ -11,8 +11,8 @@
        
         -Code Snippet:
         
-        print("First record of texts, {} texts {} at time {}".format(record1[0],record1[1],record1[2]))                                #O(1)
-        print("Last record of calls, {} calls {} at time {}, lasting {} seconds".format(record2[0],record2[1],record2[2],record2[3]))  #O(1)
+        	print("First record of texts, {} texts {} at time {}".format(record1[0],record1[1],record1[2]))                                #O(1)
+       		print("Last record of calls, {} calls {} at time {}, lasting {} seconds".format(record2[0],record2[1],record2[2],record2[3]))  #O(1)
         
         Time Complexity: O(1)
         Space Complexity: O(1)
@@ -35,7 +35,7 @@
     
                              i,e inside For-Loop : O(n*1)=O(n)
                              
-                                O(1)<O(n)
+                              		  O(1)<O(n)
                         
 	Time Complexity: O(n)
 	Space Complexity: O(n)
@@ -115,7 +115,7 @@
 	-In-built function (sorted): Time complexity: O(nlogn)
 
    	                                O(1)<O(n)<O(nlogn)
-        Time Complexity: O(n^logn)
+        Time Complexity: O(nlogn)
 	Space Complexity:O(n)
         
         ============================================================================================================================================================
@@ -128,15 +128,15 @@
 	-Code Snippet:
         
                           for record1,record2 in zip(texts,calls):
-                                 my_set.add(record1[0])
-                                 my_set.add(record1[1])
-                                 my_set.add(record2[1])
+                                 my_set.add(record1[0])		#O(1)
+                                 my_set.add(record1[1])		#O(1)
+                                 my_set.add(record2[1])		#O(1)
 
 
                          for record in calls:
-                                  pn = record[0]
+                                  pn = record[0]		 	#O(1)
                                   if pn not in my_set:
-                                        telemarketing_list.add(pn)
+                                        telemarketing_list.add(pn)	#O(1)
 
 
           [1]	Loops: “For loop” was used in the program. Complexity is O(n) 
@@ -147,8 +147,8 @@
  	
 •	-In-built function (sorted): Time complexity: O(nlogn)
 
-   	                               O(1)<O(n)<O(n^logn)
-        Time Complexity: O(n^logn)
+   	                               O(1)<O(n)<O(nlogn)
+        Time Complexity: O(nlogn)
 	Space Complexity: O(n)
 
         ========================================================================================================================================================
