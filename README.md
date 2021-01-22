@@ -3,7 +3,7 @@
 This project is divided into 5 tasks.
 
     
-    <img width="280" alt="Investigating calls and messages" src="https://user-images.githubusercontent.com/40309757/105427196-a0478180-5c72-11eb-892b-20c42eb7a72d.PNG">
+<img width="280" alt="Investigating calls and messages" src="https://user-images.githubusercontent.com/40309757/105427196-a0478180-5c72-11eb-892b-20c42eb7a72d.PNG">
     
     
  Task 0 - The script correctly prints out the information of first record of texts and last record of calls.
